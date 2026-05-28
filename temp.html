@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FENRIZ GYM | Martial Arts from Kreuzberg</title>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,900;1,900&amp;family=Inter:wght@400;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#b4b5b5",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-primary-container": "#596c00",
+                    "surface-container-lowest": "#0d0e0f",
+                    "surface-dim": "#121414",
+                    "inverse-surface": "#e3e2e2",
+                    "surface-container-high": "#292a2a",
+                    "on-tertiary-container": "#656464",
+                    "tertiary-fixed-dim": "#c9c6c5",
+                    "on-surface-variant": "#c5c9ac",
+                    "on-error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-primary": "#2a3400",
+                    "on-secondary": "#2f3131",
+                    "surface-variant": "#343535",
+                    "on-error": "#690005",
+                    "tertiary": "#ffffff",
+                    "fenriz-red": "#F14553",
+                    "background": "#121414",
+                    "surface-container": "#1e2020",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#474646",
+                    "on-tertiary": "#313030",
+                    "primary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-primary-fixed-variant": "#3e4c00",
+                    "surface-tint": "#b0d500",
+                    "on-secondary-fixed-variant": "#454747",
+                    "border-white-alpha": "rgba(255, 255, 255, 0.1)",
+                    "on-surface": "#e3e2e2",
+                    "surface": "#121414",
+                    "surface-bright": "#383939",
+                    "inverse-on-surface": "#2f3131",
+                    "inverse-primary": "#536600",
+                    "tertiary-container": "#e5e2e1",
+                    "on-primary-fixed": "#171e00",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-highest": "#343535",
+                    "secondary-container": "#454747",
+                    "primary-fixed-dim": "#b0d500",
+                    "primary-fixed": "#caf300",
+                    "secondary": "#c6c6c7",
+                    "primary-container": "#caf300",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-background": "#e3e2e2",
+                    "surface-container-low": "#1a1c1c",
+                    "outline": "#8f9378",
+                    "outline-variant": "#444932"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-edge": "40px",
+                    "section-gap-mobile": "80px",
+                    "gutter": "24px",
+                    "container-max": "1440px",
+                    "section-gap-desktop": "160px"
+            },
+            "fontFamily": {
+                    "display-xl": ["chivo"],
+                    "body-md": ["inter"],
+                    "display-lg": ["chivo"],
+                    "body-lg": ["inter"],
+                    "label-md": ["jetbrainsMono"],
+                    "headline-lg-mobile": ["chivo"],
+                    "headline-lg": ["chivo"]
+            },
+            "fontSize": {
+                    "display-xl": ["120px", {"lineHeight": "110%", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "body-md": ["16px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "110%", "letterSpacing": "-0.03em", "fontWeight": "900"}],
+                    "body-lg": ["18px", {"lineHeight": "160%", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "100%", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["36px", {"lineHeight": "120%", "fontWeight": "900"}],
+                    "headline-lg": ["48px", {"lineHeight": "120%", "letterSpacing": "-0.02em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .carousel-item { opacity: 0; transition: opacity 1.5s ease-in-out; position: absolute; inset: 0; }
+        .carousel-item.active { opacity: 1; z-index: 10; }
+        .bg-neon { background-color: #caf300; }
+        .text-neon { color: #caf300; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<nav class="bg-transparent backdrop-blur-md sticky top-0 flex justify-between items-center w-full px-margin-edge py-4 max-w-container-max mx-auto z-50 border-b border-border-white-alpha">
+<div class="font-display-lg text-[32px] md:text-display-lg font-black tracking-tighter text-primary">FENRIZ</div>
+<div class="hidden md:flex gap-8">
+<a class="font-label-md text-label-md uppercase tracking-wider text-primary border-b-2 border-primary pb-1" href="#">KURSE</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors" href="#">EVENTS</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors" href="#">PREISE</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors" href="#">ÜBER UNS</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors" href="#">KURSPLAN</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-secondary hover:text-primary transition-colors" href="#">SHOP</a>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-primary cursor-pointer">language</span>
+<button class="bg-primary text-surface-container-lowest px-6 py-2 font-label-md uppercase tracking-widest hover:bg-primary-fixed-dim transition-all active:scale-95">MITGLIEDERBEREICH</button>
+</div>
+</nav>
+<!-- Hero Carousel -->
+<section class="relative h-[90vh] md:h-screen w-full overflow-hidden">
+<div class="absolute inset-0" id="hero-carousel">
+<!-- Slide 1 -->
+<div class="carousel-item active">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 to-transparent z-20"></div>
+<img alt="" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0uiDsmK4gY7fHxAdsgaGA80biAOp-G6XPEBeaaWRrfAzCoMmflOcoNA0ilETaEMFQc2w4BOO3gN15O-OxXR2RAFZtiqp2K2vwX7MorH-3TV5DYPiQm3RveqyCHPjQbxJVu9mG8EU9l4DGERbdB2Yn6r9UZH-2XS0-_pC6_8D6Z0BFGOqSAmAnueESZxslEnfTxm4RmRQ5BHSWcH2XJD4kCXP7R6DJAp1IdTd49ptuy6Jn2w6KojMXtpkO6o"/>
+</div>
+<!-- Slide 2 -->
+<div class="carousel-item">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 to-transparent z-20"></div>
+<img alt="" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0ugnuyUhTblgNrE9zeeSZMet486OLd_y22TMhjl7LpXjQuLTRUMXPH94F5iYIHCCBBF5kVtIvmzcziY72deS9XFT4vkvWMC2cVUKp25orFwbIBxUsWPhvUmOi6CwD8Yzlb5WK3LV3SIUbep2m_Zmd5UvJ4Du8kzcgeJPeWJvLx-C_EaythzxZdRimzELqGpMRBtOgufh8LF-N5zGxGMlMMXJ8HhSFArdqflAwuLijuchbmhs220fdp4-mec"/>
+</div>
+<!-- Slide 3 -->
+<div class="carousel-item">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest/80 to-transparent z-20"></div>
+<img alt="" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida/ADBb0uga4jrRF2Hmpqsrbbt7Sl1kZiU2xfe8jpSl65p_7GbNmsAulmFDm46c7ecb4t5IrZeJIeaJPiQSdR6FOSXdWft3cbc7Gn2MxThPk3twM8gxlQNXZMqzE1wPbTFkuE2dHAZ_Y54LhC5Cjvr7Yh9PFsyxTnpTZawhDLDHyc5t1RFzsi26UKpCsvvRq2_JjrxBb8-SUR-nJ5_Oc7UsutBFTAs37sYM60iZYZc8NwhjTO9rmXuuHWfRqltEXQ"/>
+</div>
+</div>
+<div class="relative z-30 flex flex-col justify-center h-full px-margin-edge max-w-container-max mx-auto">
+<h1 class="font-display-xl text-[64px] md:text-display-xl leading-[0.9] text-primary max-w-4xl">
+                Martial arts.<br/>From Kreuzberg.<br/>With Love.
+            </h1>
+<p class="mt-8 text-body-lg text-secondary max-w-lg font-body-lg">
+                Komm vorbei und trainiere mit uns im Herzen von Berlin. Dich erwartet eine tolle Community mit erfahrenen Trainer:innen.
+            </p>
+<div class="mt-12">
+<button class="bg-primary-fixed text-on-primary-fixed px-10 py-5 font-bold uppercase tracking-widest hover:brightness-110 transition-all transform hover:-translate-y-1 active:scale-95">JETZT KURSE ENTDECKEN</button>
+</div>
+</div>
+</section>
+<!-- Unsere Kurse -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-edge max-w-container-max mx-auto reveal">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-display-lg uppercase mb-6">UNSERE KURSE</h2>
+<p class="text-body-md text-secondary">Auf über 1500 m² bieten wir dir ein breites Spektrum an Kampfsport, Fitness und Erholung. Egal, ob für ein erstes Probetraining oder als ambitionierte:r Wettkämpfer:in.</p>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-gutter pb-8 no-scrollbar scroll-smooth">
+<!-- Card Muay Thai -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uhuf9uPmY87vvBXR32pZ-35mm8lemypnm8f9H5RQCfbmw-4jfUVJIZgC8s6YftcFir7Pmcwx_vsVIzc1GmDymzrx4GQuhRF9AKL2T8Bapr-9ecv0141EO24BPtEaZB4hwczrtgcZvUQfhbUC3dM0XUwSwdr7D6tpY6YzPbS-56Uj_2mZBAnGSR6Jc5Mz2WV-rXnno7IGEuaTS_SlSCU8LBgF8YPXBBxJCkJ4T34OHqIbtCxLS8np7JfY7w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">Muay Thai</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Card Fitness -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ujD2ubIl26aaIq9Wes7Y1jb9a1gth1CqD3aSno_2n4BDBD5JFwSK6emqaLO5cz186DvL41NMc6knStMsGKssMxpoI0PjwNsZHA7qEe_sEKX8o3UzJ4xq-S7DsIl0kEKnaDqrA5dsN1S4li0UCjdTsSy3HJkd_KoQ9szQgpCZEuxyq8vuKUtPQKRxVnC0K6_62MtXDUmJj5YRjfdOV2Am_3VniIkpiCG2xgMo_Fdyo4eFivwXBMnoh4ydoM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">Fitness</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Card MMA -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uj8RpRBx2GkdgcYTvLduC1IoxMIN9DcfWgGrQ4uJUe73ryC3lANHDiJ6ZMan3vhN_-qrPCxHy2gkmFMUu7T3H1UDz1UO8aUn_2uMuTBiMjee2AXxP5J-ShHK_na4x9oWLlN4E2eTV0LLHjdSAf2HkuqLYHxVZNroriaFigf-XQFnI0L-WqsBQZTaRp8zbCVKjA6xJ3erUk3U904-yHLXEMRquGwKxKZ3Yc2uGpHmN6FeeVwog0KFnPaxmI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">MMA</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Card BJJ -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugYm__OgFjeo2w68QHyWBmdMB3CtikoAM_jvHmQl7EPbrSW3bH4oavvNAOnCDeWCjAyTljNUHeYDnobZksEa5q6m6uFIw3Gp5FVYw1DyMKms80s0g4OqNkit_lT5JR6_1csRFrhxNPJbhLJCrUFp5BpIfgpOleeKkGpOxcvgk7Ca05-zkttoWXdDdeTAohyqA4GgcsTXpYkdZNwKia6HkAqY9ZvzBGK8cTcqRz6Q-nkZjdnD8wcAIRwjw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">BJJ</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Card Boxen -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugXVYzPdg4Zl0lMuZgvCvN1ixVtYn5ssEGUjIH9gkfhq9C4SUcRP8igLk9ZElq9b1HaRROtkqMnx4p8nSwe1-fTZsMQvgoyLf4jKcTimDnpGJwuUVt06jkogQ3CYWAGRRLT3AYIDxLy6TE4rXOGbQXi1g93O9dQ06mt9gBAf7Yl0176068wTty06H0qtFTnHVeapUC8mupPh8Z5nKznojfMcJrecCyf9zsViPrgiQcffoh9YjoOG5brwSo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">Boxen</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Card Recovery -->
+<div class="min-w-[300px] md:min-w-[400px] aspect-[3/4] relative group overflow-hidden cursor-pointer bg-surface-container">
+<img alt="" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0uioYu6A36acAuHHBV9ZMuFVRYu5hhIUtXiQWG6xUDADINderFIBAXs1EKK9nkuFEwRi1uXIUDmJ6Ze25a7h2-8gv0SafnLC2Wf1GbViUMkeyfld-iaonwWTBNA6Yu8Rl1NJNO30a_QFOg61bYabO-xBf60hEtiJ1Y8LXuP1n33VWKedSOHEr7DLd_-H1R5tBwGtJ4TA3s5kQGM9S2TrIKATKL1c59mWiVS2-VPZ8Pdww7oNBIx6flk9mg4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+<div class="absolute bottom-8 left-8">
+<h3 class="font-headline-lg text-primary uppercase mb-2">Recovery</h3>
+<div class="w-12 h-1 bg-primary-fixed group-hover:w-full transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Probetraining Section -->
+<section class="flex flex-col md:flex-row min-h-screen border-t border-border-white-alpha reveal">
+<div class="w-full md:w-1/2 p-margin-edge flex flex-col justify-center">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-10">probetraining</h2>
+<div class="space-y-6 text-body-lg text-on-surface-variant max-w-xl">
+<p>Du möchtest ein kostenloses Probetraining bei uns machen? Sehr gerne! Komm einfach während unserer regulären Öffnungszeiten vorbei und sprich mit unserem Team im Eingangsbereich.</p>
+<p>Dort beraten wir dich, finden gemeinsam einen passenden Termin und zeigen dir das Gym.</p>
+<p class="text-sm font-label-md opacity-60">Bitte beachte, dass wir aufgrund der hohen Nachfrage selten Termine am gleichen Tag anbieten können.</p>
+</div>
+<div class="mt-12 flex gap-4">
+<button class="bg-primary text-surface-container-lowest px-8 py-4 font-bold uppercase tracking-wider hover:bg-primary-fixed-dim transition-all">TERMIN ANFRAGEN</button>
+<button class="border border-primary text-primary px-8 py-4 font-bold uppercase tracking-wider hover:bg-primary hover:text-surface-container-lowest transition-all">HELPCENTER</button>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-[600px] md:h-auto overflow-hidden">
+<img alt="" class="w-full h-full object-cover grayscale hover:scale-105 transition-transform duration-1000" src="https://lh3.googleusercontent.com/aida/ADBb0uglllBvPBMygJCQYo6N3O1fqq1Zvj7S0grBs7sNZBVb5-cMrDxwpt2i4ktmDyD3MnsusAczcULFZNFwG9Zo9e8g1k1_EdWp6mOXqVRiXNtc_anyB6p2Fb3ylQX0uVCGwGsOm8uQk0REeWq8lqQqGtRn9aGSjtn_ABco-h3z8ANoL1maaKCaRG1scf8v1DoDosvpAjBQWyiugS98G5YGwAA3Juu4RokTWoLZmUuYos9u4xDGyf4tjGhEm70"/>
+</div>
+</section>
+<!-- Section Divider Atmospheric -->
+<section class="h-[60vh] w-full relative overflow-hidden reveal">
+<img alt="" class="w-full h-full object-cover fixed top-0 left-0 -z-10 grayscale brightness-50" src="https://lh3.googleusercontent.com/aida/ADBb0uh8kXhsEx3zHdi1iU2fPzvN3I-gznbZKJumLCqqMImMlaK2oe7OP0fqG1vIT4MuqiJ14shvdNNXSJkeJwo4BMRuFRqMg9ffQhwvHAr-7rYze1Fx4azHmYRLreY4C6RaGQxSSXkk-MYvBzM9INp1QP8qrHv5B4cQWhb5eBXv779tNjf4_7SIHaTlGV_otzc9RMW0Fb8-ep9D2LqdyCYi4pGKCUrTDmfNo90DYJ9F1Q9XYNq7C4kM3zlXiJQ"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+<span class="font-display-xl text-primary/10 tracking-widest uppercase pointer-events-none md:text-[200px]">FENRIZ</span>
+</div>
+</section>
+<!-- Über Uns -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-edge max-w-container-max mx-auto reveal">
+<div class="flex flex-col md:flex-row gap-20 items-center">
+<div class="w-full md:w-1/2">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-8">über uns</h2>
+<div class="space-y-6 text-body-lg text-secondary">
+<p>Wir haben uns im Jahr 2010 gegründet und sind seitdem am Moritzplatz zuhause. Wir begannen ursprünglich als reines MMA-Gym, haben uns jedoch im Laufe der Zeit zu einem Stützpunkt für verschiedene Kampfsportarten entwickelt.</p>
+<p>An sieben Tagen in der Woche sorgen unser Team und Community in über 140 Kursen für eine riesige Auswahl an Aktivitäten.</p>
+</div>
+<button class="mt-12 text-primary uppercase font-bold flex items-center gap-2 group">
+                    Mehr Erfahren 
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-20 pt-10 border-t border-border-white-alpha">
+<p class="font-label-md text-secondary uppercase mb-8 tracking-widest opacity-50">Unsere Partner</p>
+<div class="flex gap-12 grayscale opacity-40 hover:opacity-100 transition-opacity">
+<div class="w-16 h-16 bg-white/10 flex items-center justify-center rounded">WBC</div>
+<div class="w-16 h-16 bg-white/10 flex items-center justify-center rounded">GEMMAF</div>
+<div class="w-16 h-16 bg-white/10 flex items-center justify-center rounded">AMMAG</div>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-primary-fixed"></div>
+<img alt="" class="w-full aspect-[4/5] object-cover grayscale shadow-2xl" src="https://lh3.googleusercontent.com/aida/ADBb0ugo4WIJkFQz4r-T_GKnA8kH4cGtwMqYdwW7LLvUOV89d79zbfmQupA6AKbZCcT-OHKqmmW_nUy98i7B4R3zfFFYPboRMLDtfb5bqOTmVWDR0fjJHGHbXITaMM7ucVRcqQsOjt8CLPT19ouYEEovg80nIVIj9EZh4XQahRtVGUMnohVJfw5oMRbBuxFr6GJaCzVMFp654MSf7-s6ZMczCJ0OCI0JbykYSZiP2MCRvcco0C1bUE-FQdvwHQw"/>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-primary-fixed"></div>
+</div>
+</div>
+</section>
+<!-- Events Section -->
+<section class="bg-surface-container-lowest py-section-gap-mobile md:py-section-gap-desktop border-y border-border-white-alpha reveal">
+<div class="px-margin-edge max-w-container-max mx-auto">
+<div class="flex justify-between items-center mb-16">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase">events</h2>
+<a class="hidden md:block font-label-md uppercase tracking-widest text-primary-fixed underline underline-offset-8" href="#">Alle Events</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Event 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden mb-6">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhBQ5a_mF4kAuD4tg0RMB7g74JS4TXMFQKiNp9etCj_OfKv1Ab_1iLFW9LROGcV1W2iSTXJXjsmrYO5I0wjOOWrtzsFn4gDeulnqn7zOECq2ajXiCjymlM1TweQd6CavtvPWYqxleK9CSAqZ_uuWd1oc9SyWA23nXtIVq51K9d_b5aMphP_SmpxY0LfFLHdRrIHzxcSI6JXWR679RTOqUz4btM0PrtGy1brtCpB8tdoFNIywVSTkaFiIu0"/>
+</div>
+<span class="font-label-md text-primary-fixed mb-2 block">30.5.26</span>
+<h3 class="font-headline-lg-mobile uppercase mb-4 group-hover:text-primary-fixed transition-colors">Intro to Martial Arts for FLINTA*</h3>
+<p class="text-body-md text-secondary mb-6">Das Wochenendseminar von und für FLINTA*s zur Einführung in den Kampfsport.</p>
+<span class="font-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">mehr erfahren <span class="material-symbols-outlined text-[18px]">east</span></span>
+</div>
+<!-- Event 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden mb-6">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ui41Wr6Y3Ox_somKXFBkEESwWrlf6qlMwIOz4XkDrmgPM68lqGbZioEiaSNGuVAmHW8-RYypFKuYM8POXxAUCIgYRBvp6DUJNWTjFpMuahciuBAPZoq4W1QQ1lsvxea8HpkY5LvM7L-wW6ZLQqwI809AUYFkmZVA-8Ocnd_-xGPVLNSJJ6qfTd2ndlX8opV4jJgHBBfjEmvcKy9ksCrdzEHHyKYQq27zTfcG6hYgSxpTlwSbyCU6FQRGA"/>
+</div>
+<span class="font-label-md text-primary-fixed mb-2 block">Sonntags</span>
+<h3 class="font-headline-lg-mobile uppercase mb-4 group-hover:text-primary-fixed transition-colors">Gracie Academy Berlin: Open Mat</h3>
+<p class="text-body-md text-secondary mb-6">Open Mat für Grappling und BJJ im Herzen von Kreuzberg.</p>
+<span class="font-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">mehr erfahren <span class="material-symbols-outlined text-[18px]">east</span></span>
+</div>
+<!-- Event 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-video overflow-hidden mb-6">
+<img alt="" class="w-full h-full object-cover grayscale group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ugo4WIJkFQz4r-T_GKnA8kH4cGtwMqYdwW7LLvUOV89d79zbfmQupA6AKbZCcT-OHKqmmW_nUy98i7B4R3zfFFYPboRMLDtfb5bqOTmVWDR0fjJHGHbXITaMM7ucVRcqQsOjt8CLPT19ouYEEovg80nIVIj9EZh4XQahRtVGUMnohVJfw5oMRbBuxFr6GJaCzVMFp654MSf7-s6ZMczCJ0OCI0JbykYSZiP2MCRvcco0C1bUE-FQdvwHQw"/>
+</div>
+<span class="font-label-md text-primary-fixed mb-2 block">31.8.26</span>
+<h3 class="font-headline-lg-mobile uppercase mb-4 group-hover:text-primary-fixed transition-colors">Kardia - Muay Thai Sparring</h3>
+<p class="text-body-md text-secondary mb-6">Fortgeschrittenes Muay Thai Sparring für ambitionierte Kämpfer.</p>
+<span class="font-label-md uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all">mehr erfahren <span class="material-symbols-outlined text-[18px]">east</span></span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ & Contact -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop px-margin-edge max-w-container-max mx-auto reveal">
+<div class="flex flex-col md:flex-row gap-20">
+<div class="w-full md:w-1/2">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-10">faq &amp; contact</h2>
+<div class="space-y-6 text-body-lg text-secondary mb-12">
+<p>Du hast Fragen zum Gym, den Kursen, dem Probetraining oder deiner Mitgliedschaft? Besuche unser Helpcenter oder schreibe uns eine E-Mail.</p>
+</div>
+<div class="flex flex-col gap-4">
+<button class="bg-primary-fixed text-on-primary-fixed w-full py-5 font-bold uppercase tracking-widest hover:brightness-110 transition-all">Zum Hilfecenter</button>
+<div class="grid grid-cols-2 gap-4">
+<button class="border border-border-white-alpha py-4 font-bold uppercase hover:bg-white/5 transition-all">E-Mail Uns</button>
+<button class="border border-border-white-alpha py-4 font-bold uppercase hover:bg-white/5 transition-all">Kollaborationen</button>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 h-[450px] relative overflow-hidden group">
+<!-- Map Placeholder -->
+<div class="absolute inset-0 bg-surface-container-high grayscale brightness-50">
+<img alt="" class="w-full h-full object-cover opacity-30 blur-sm" src="https://lh3.googleusercontent.com/aida/ADBb0ui41Wr6Y3Ox_somKXFBkEESwWrlf6qlMwIOz4XkDrmgPM68lqGbZioEiaSNGuVAmHW8-RYypFKuYM8POXxAUCIgYRBvp6DUJNWTjFpMuahciuBAPZoq4W1QQ1lsvxea8HpkY5LvM7L-wW6ZLQqwI809AUYFkmZVA-8Ocnd_-xGPVLNSJJ6qfTd2ndlX8opV4jJgHBBfjEmvcKy9ksCrdzEHHyKYQq27zTfcG6hYgSxpTlwSbyCU6FQRGA"/>
+</div>
+<div class="absolute inset-0 flex items-center justify-center z-10">
+<div class="bg-surface-container p-8 border border-border-white-alpha max-w-xs shadow-2xl">
+<h4 class="font-display-lg text-headline-lg-mobile uppercase mb-2">FIND US</h4>
+<p class="text-body-md text-secondary">Lobeckstraße 36, 10969 Berlin</p>
+<a class="mt-6 block text-primary-fixed font-bold uppercase underline" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fenriz+Gym" target="_blank">Route Planen</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shop Row -->
+<section class="bg-surface-container py-24 reveal">
+<div class="px-margin-edge max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
+<div>
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg uppercase mb-2">shop</h2>
+<p class="text-body-md text-secondary">Fenriz, Kardia oder Gracie Merch gefällig?</p>
+</div>
+<button class="bg-primary text-surface-container-lowest px-12 py-4 font-bold uppercase tracking-widest hover:bg-primary-fixed-dim transition-all">ZUM SHOP</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<!-- Product 1 -->
+<div class="group">
+<div class="aspect-square bg-surface-container-lowest flex items-center justify-center p-8 mb-6 overflow-hidden">
+<div class="w-full h-full bg-surface-container-high/50 flex items-center justify-center text-secondary font-black group-hover:scale-110 transition-transform duration-500">T-SHIRT</div>
+</div>
+<h4 class="font-label-md uppercase mb-2">Fenriz Classic Tee</h4>
+<p class="text-body-md text-secondary mb-4">29,00 €</p>
+<button class="text-xs font-bold uppercase tracking-widest text-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity">Jetzt bestellen</button>
+</div>
+<!-- Product 2 -->
+<div class="group">
+<div class="aspect-square bg-surface-container-lowest flex items-center justify-center p-8 mb-6 overflow-hidden">
+<div class="w-full h-full bg-surface-container-high/50 flex items-center justify-center text-secondary font-black group-hover:scale-110 transition-transform duration-500">HOODIE</div>
+</div>
+<h4 class="font-label-md uppercase mb-2">Fenriz Logo Hoodie</h4>
+<p class="text-body-md text-secondary mb-4">59,00 €</p>
+<button class="text-xs font-bold uppercase tracking-widest text-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity">Jetzt bestellen</button>
+</div>
+<!-- Product 3 -->
+<div class="group">
+<div class="aspect-square bg-surface-container-lowest flex items-center justify-center p-8 mb-6 overflow-hidden">
+<div class="w-full h-full bg-surface-container-high/50 flex items-center justify-center text-secondary font-black group-hover:scale-110 transition-transform duration-500">CAP</div>
+</div>
+<h4 class="font-label-md uppercase mb-2">Organic Dad Hat</h4>
+<p class="text-body-md text-secondary mb-4">25,00 €</p>
+<button class="text-xs font-bold uppercase tracking-widest text-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity">Jetzt bestellen</button>
+</div>
+<!-- Product 4 -->
+<div class="group">
+<div class="aspect-square bg-surface-container-lowest flex items-center justify-center p-8 mb-6 overflow-hidden">
+<div class="w-full h-full bg-surface-container-high/50 flex items-center justify-center text-secondary font-black group-hover:scale-110 transition-transform duration-500">BAG</div>
+</div>
+<h4 class="font-label-md uppercase mb-2">Gym Duffle Bag</h4>
+<p class="text-body-md text-secondary mb-4">45,00 €</p>
+<button class="text-xs font-bold uppercase tracking-widest text-primary-fixed opacity-0 group-hover:opacity-100 transition-opacity">Jetzt bestellen</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full px-margin-edge py-section-gap-mobile md:py-section-gap-desktop flex flex-col items-center text-center bg-surface-container-lowest border-t border-border-white-alpha">
+<div class="font-display-lg text-display-lg-mobile md:text-display-lg font-black text-primary mb-12">FENRIZ</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-left w-full max-w-container-max mx-auto mb-20">
+<div>
+<h5 class="font-label-md uppercase text-primary mb-6 tracking-widest">Adresse</h5>
+<p class="text-body-md text-secondary">Fenriz Gym<br/>Lobeckstraße 36<br/>10969 Berlin</p>
+</div>
+<div>
+<h5 class="font-label-md uppercase text-primary mb-6 tracking-widest">ÖFFNUNGSZEITEN</h5>
+<p class="text-body-md text-secondary">Mo-Fr: 07-22 Uhr<br/>Sa: 10-16 Uhr<br/>So: 10-17 Uhr</p>
+</div>
+<div>
+<h5 class="font-label-md uppercase text-primary mb-6 tracking-widest">LINKS</h5>
+<div class="flex flex-col gap-2">
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">HILFE</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">KURSE</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">EVENTS</a>
+<a class="text-on-secondary-container hover:text-primary transition-colors" href="#">SHOP</a>
+</div>
+</div>
+<div>
+<h5 class="font-label-md uppercase text-primary mb-6 tracking-widest">FOLGE UNS</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-border-white-alpha rounded-full flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">IG</a>
+<a class="w-10 h-10 border border-border-white-alpha rounded-full flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">FB</a>
+<a class="w-10 h-10 border border-border-white-alpha rounded-full flex items-center justify-center hover:bg-primary hover:text-surface transition-all" href="#">YT</a>
+</div>
+</div>
+</div>
+<div class="w-full flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-white-alpha gap-4">
+<p class="text-body-md text-on-secondary-container opacity-50">© 2024 FENRIZ GYM. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#">PRIVACY</a>
+<a class="text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#">IMPRESSUM</a>
+<a class="text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#">CONTACT</a>
+<a class="text-body-md text-on-secondary-container hover:text-primary transition-colors" href="#">CAREERS</a>
+</div>
+</div>
+</footer>
+<script>
+        // Hero Carousel Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-item');
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        setInterval(nextSlide, 5000);
+
+        // Scroll Reveal Interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Smooth interaction on buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => btn.classList.add('scale-95'));
+            btn.addEventListener('mouseup', () => btn.classList.remove('scale-95'));
+            btn.addEventListener('mouseleave', () => btn.classList.remove('scale-95'));
+        });
+    </script>
+</body></html>

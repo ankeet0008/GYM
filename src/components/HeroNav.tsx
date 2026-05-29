@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import homeBg from '../assets/home page.webp';
 
@@ -6,15 +6,39 @@ import { Link } from 'react-router-dom';
 import { ScrambleText } from './ScrambleText';
 
 export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <Link to="/" className="nav-logo">GYMME</Link>
+      
+      {/* Hamburger button - mobile only */}
+      <button 
+        className={`hamburger ${menuOpen ? 'active' : ''}`} 
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+      >
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+        <span className="hamburger-line"></span>
+      </button>
+
+      {/* Desktop nav links */}
       <div className="nav-links">
         <Link to="/courses" className="nav-link">COURSES</Link>
         <Link to="/pricing" className="nav-link">PRICING</Link>
         <Link to="/about" className="nav-link">ABOUT US</Link>
         <Link to="/contact" className="nav-link">CONTACT US</Link>
         <Link to="/login" className="nav-link">MEMBERS AREA</Link>
+      </div>
+
+      {/* Mobile menu overlay */}
+      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <Link to="/courses" className="mobile-link" onClick={() => setMenuOpen(false)}>COURSES</Link>
+        <Link to="/pricing" className="mobile-link" onClick={() => setMenuOpen(false)}>PRICING</Link>
+        <Link to="/about" className="mobile-link" onClick={() => setMenuOpen(false)}>ABOUT US</Link>
+        <Link to="/contact" className="mobile-link" onClick={() => setMenuOpen(false)}>CONTACT US</Link>
+        <Link to="/login" className="mobile-link" onClick={() => setMenuOpen(false)}>MEMBERS AREA</Link>
       </div>
     </nav>
   );

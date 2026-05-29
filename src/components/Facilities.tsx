@@ -44,7 +44,7 @@ export const FacilitiesGallery = () => {
           gap: '30px' 
         }}>
           {images.map((img, idx) => (
-            <div key={idx} style={{ position: 'relative', overflow: 'hidden', height: '400px', group: 'true' }} className="facility-card">
+            <div key={idx} style={{ position: 'relative', overflow: 'hidden', height: '400px' }} className="facility-card">
               <img 
                 src={img.src} 
                 alt={img.title} 

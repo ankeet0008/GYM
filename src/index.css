@@ -58,9 +58,9 @@
   --spacing-section-gap-desktop: 160px;
 
   /* Fonts */
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-label: 'JetBrains Mono', monospace;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-label: 'Barlow Condensed', sans-serif;
 
   /* Typography */
   --text-display-xl: 120px;
@@ -221,4 +221,98 @@ button {
 .btn-outline:hover {
   background-color: var(--color-primary);
   color: var(--color-surface-container-lowest);
+}
+
+/* --- FENRIZ GYM TYPOGRAPHY OVERRIDES --- */
+/* BASE BODY FONT */
+body {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+}
+
+/* ALL HEADINGS — h1, h2, h3 */
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* H1 — Page hero title like "TRIAL TRAINING" or "COURSE PLAN" */
+h1 {
+  font-size: clamp(64px, 8vw, 110px);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+}
+
+/* H2 — Section titles */
+h2 {
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+}
+
+/* H3 — Subsection titles */
+h3 {
+  font-size: clamp(24px, 3vw, 42px);
+  line-height: 1.1;
+}
+
+/* H4, H5 — Footer labels like "Address", "Opening Hours", "Follow Us" */
+h4, h5 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* BODY / PARAGRAPH TEXT */
+p {
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* NAVIGATION LINKS */
+nav a, .nav-link {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* LOGO TEXT (if text-based, not SVG) */
+.logo, .nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.15em;
+}
+
+/* BUTTONS / CTAs */
+button, .btn, a.button, .btn-primary, .btn-outline, .btn-white {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+}
+
+/* FOOTER LINKS */
+footer a, .footer-links-main a, .footer-links-sub a {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase;
+}
+
+/* SMALL LABELS / TAGS */
+small, .label, .tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }

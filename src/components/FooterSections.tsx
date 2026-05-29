@@ -129,10 +129,10 @@ export const Footer = () => {
 
       <div className="footer-links-main">
         <a href="/courses" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 900, letterSpacing: '1px' }}>COURSES</a>
-        <a href="#">PRICING</a>
-        <a href="#">ABOUT US</a>
-        <a href="#">COURSE PLAN</a>
-        <a href="#">MEMBER AREA</a>
+        <a href="/pricing" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 900, letterSpacing: '1px' }}>PRICING</a>
+        <a href="/about" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 900, letterSpacing: '1px' }}>ABOUT US</a>
+        <a href="/contact" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 900, letterSpacing: '1px' }}>CONTACT US</a>
+        <a href="/login" style={{ color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-body)', fontSize: '12px', fontWeight: 900, letterSpacing: '1px' }}>MEMBER AREA</a>
       </div>
 
       <div className="footer-links-sub">

@@ -1,25 +1,17 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrambleText } from './ScrambleText';
 import tieImg from '../assets/ties.webp';
 import lala3Img from '../assets/lala3.webp';
 
 export const CoursesHero = () => {
-  const textRef = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    gsap.fromTo(textRef.current, 
-      { opacity: 0, scale: 0.9, y: 30 },
-      { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: "power3.out", delay: 0.2 }
-    );
-  }, []);
-
   return (
     <section className="courses-hero">
       <div className="courses-bg">
         <img src={tieImg} alt="Courses Background" />
         <div className="courses-overlay"></div>
       </div>
-      <h1 ref={textRef} className="courses-title">COURSES</h1>
+      <ScrambleText as="h1" text="COURSES" className="courses-title" />
     </section>
   );
 };

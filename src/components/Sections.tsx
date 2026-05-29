@@ -12,6 +12,7 @@ import yogaImg from '../assets/yoga.jpg';
 import trialTrainingImg from '../assets/tie.webp';
 import lalaImg from '../assets/lala.webp';
 import lala2Img from '../assets/lala2.webp';
+import glovesImg from '../assets/gloves.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -159,16 +160,35 @@ export const Divider = () => {
 export const About = () => {
   const ref = useReveal();
   return (
-    <section className="about-section-new" id="about-section-wrapper" ref={ref}>
-      <div className="about-container">
-        <h2 className="about-title-new" data-text="ABOUT US">ABOUT US</h2>
+    <section className="gloves-section" id="about-section-wrapper" ref={ref}>
+      <div className="gloves-container">
         
-        <div className="about-text-new">
-          <p>We founded the gym in 2010 and have been based at Moritzplatz ever since. Originally starting as a pure MMA gym, over time, we have evolved into a hub for various martial arts with a focus on MMA, BJJ, and Muay Thai.</p>
-          <p>Seven days a week, our team and community ensure a vast array of activities through over 140 classes. Our fitness area and spacious mat areas provide opportunities for independent strength and technique training or sparring sessions with friends.</p>
+        <div className="gloves-image-wrapper">
+          <div className="gloves-gradient-bar"></div>
+          <img src={glovesImg} alt="Gym Gloves" className="gloves-image" />
         </div>
+        
+        <div className="gloves-content-wrapper">
+          <p className="gloves-text">
+            We founded the gym in 2010 and have been based at Moritzplatz ever since. Originally starting as a pure MMA gym, over time, we have evolved into a hub for various martial arts with a focus on MMA, BJJ, and Muay Thai.
+          </p>
+          <p className="gloves-text">
+            Seven days a week, our team and community ensure a vast array of activities through over 140 classes. Our fitness area and spacious mat areas provide opportunities for independent strength and technique training or sparring sessions with friends.
+          </p>
 
-        <button className="btn-learn-more">LEARN MORE</button>
+          <button 
+            className="btn-get-to-know" 
+            onClick={() => {
+              const gymSection = document.getElementById('the-gym-section');
+              if (gymSection) {
+                gymSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            GET TO KNOW THE GYM
+          </button>
+        </div>
+        
       </div>
     </section>
   );

@@ -1,5 +1,7 @@
 .navbar {
-  background-color: #0A0A0A;
+  background-color: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   display: flex;
@@ -975,4 +977,347 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
+}
+
+/* PRICING SECTION */
+.pricing-section {
+  background-color: var(--color-surface-container-lowest);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: clamp(48px, 6vw, 80px);
+  margin-bottom: 60px;
+}
+
+.pricing-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+  .pricing-controls {
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
+.duration-tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.duration-btn {
+  background: transparent;
+  border: 1px solid var(--color-surface-bright);
+  color: var(--color-on-surface);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.duration-btn.active, .duration-btn:hover {
+  background-color: var(--color-on-surface);
+  color: var(--color-surface-container-lowest);
+}
+
+.student-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.student-label {
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-surface-bright);
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: var(--color-primary-fixed);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--color-on-primary-fixed);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.pricing-card {
+  background-color: var(--color-surface);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-card-header {
+  background-color: var(--color-surface-container-high);
+  padding: 40px 20px;
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+  font-family: var(--font-label);
+  font-weight: 900;
+  font-size: 12px;
+  padding: 5px 10px;
+  transform: rotate(10deg);
+}
+
+.plan-name {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-family: var(--font-display);
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.currency {
+  font-size: 24px;
+  margin-right: 5px;
+}
+
+.amount {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.period {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  margin-left: 5px;
+  text-transform: none;
+}
+
+.pricing-card-body {
+  padding: 30px 20px;
+  background-color: #fff;
+  color: #121414;
+  flex: 1;
+}
+
+.feature-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.feature-row.highlight {
+  font-weight: 700;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+  margin: 25px 0;
+}
+
+.feature-label {
+  font-family: var(--font-label);
+  font-weight: 600;
+  margin-bottom: 5px;
+  letter-spacing: 0.05em;
+}
+
+.feature-value {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Gradient Text for Pricing */
+.pricing-title, .plan-name {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.pricing-title::after, .plan-name::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  background: linear-gradient(135deg, #f0e68c, #ff6b6b, #4a90e2, #2ecc71);
+  -webkit-background-clip: text;
+  background-clip: text;
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+  z-index: 1;
+}
+
+.plan-name {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+/* Gloves About Section */
+.gloves-section {
+  background-color: #f4f4f4;
+  color: #121414;
+  padding: 100px 20px;
+}
+
+.gloves-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+@media (min-width: 768px) {
+  .gloves-container {
+    flex-direction: row;
+  }
+}
+
+.gloves-image-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.gloves-gradient-bar {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 10%;
+  height: 60px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #f0e68c, #ff6b6b, #4a90e2, #2ecc71);
+  z-index: 1;
+}
+
+.gloves-image {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(10px 10px 15px rgba(0,0,0,0.3));
+}
+
+.gloves-image:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.gloves-content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 0;
+}
+
+@media (min-width: 768px) {
+  .gloves-content-wrapper {
+    padding-left: 50px;
+  }
+}
+
+.gloves-text {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn-get-to-know {
+  align-self: flex-start;
+  background-color: #121414;
+  color: #fff;
+  font-family: var(--font-label);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-get-to-know:hover {
+  background-color: #333;
 }

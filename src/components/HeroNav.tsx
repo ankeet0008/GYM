@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import homeBg from '../assets/home page.webp';
 
 import { Link } from 'react-router-dom';
+import { ScrambleText } from './ScrambleText';
 
 export const Navbar = () => {
   return (
@@ -10,15 +11,10 @@ export const Navbar = () => {
       <Link to="/" className="nav-logo">GYMME</Link>
       <div className="nav-links">
         <Link to="/courses" className="nav-link">COURSES</Link>
-        <a href="#" className="nav-link">PRICING</a>
-        <a href="#" className="nav-link">ABOUT US</a>
-        <a href="#" className="nav-link">SCHEDULE</a>
-        <a href="#" className="nav-link">MEMBERS AREA</a>
-        <div className="lang-switcher">
-          <span className="lang-muted">DE</span>
-          <span className="lang-sep">|</span>
-          <span className="lang-active">EN</span>
-        </div>
+        <Link to="/pricing" className="nav-link">PRICING</Link>
+        <Link to="/about" className="nav-link">ABOUT US</Link>
+        <Link to="/contact" className="nav-link">CONTACT US</Link>
+        <Link to="/login" className="nav-link">MEMBERS AREA</Link>
       </div>
     </nav>
   );
@@ -44,15 +40,19 @@ export const Hero = () => {
         <div className="hero-gradient"></div>
         <div className="hero-tint"></div>
       </div>
-      <div className="hero-content" ref={textRef}>
-        <h1 className="font-display-xl hero-title">
-          MARTIAL ARTS.<br/>FROM BROOKLYN.<br/>WITH LOVE.
-        </h1>
-        <p className="font-body-lg hero-desc">
-          Come by and train with us. A great community with experienced coaches awaits you.<br/>Together we'll bring out the best in you.
-        </p>
-        <div className="hero-cta">
-          <button className="btn-white">DISCOVER CLASSES</button>
+      <div className="hero-content">
+        <ScrambleText 
+          as="h1" 
+          text={["MARTIAL ARTS.", "FROM BROOKLYN.", "WITH LOVE."]} 
+          className="font-display-xl hero-title" 
+        />
+        <div ref={textRef}>
+          <p className="font-body-lg hero-desc">
+            Come by and train with us. A great community with experienced coaches awaits you.<br/>Together we'll bring out the best in you.
+          </p>
+          <div className="hero-cta">
+            <button className="btn-white">DISCOVER CLASSES</button>
+          </div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 import muayThaiImg from '../assets/muathai.png';
 import fitnessImg from '../assets/fitness.jpg';
@@ -17,12 +18,12 @@ import glovesImg from '../assets/gloves.png';
 gsap.registerPlugin(ScrollTrigger);
 
 const courses = [
-  { title: "MUAY THAI", img: muayThaiImg },
-  { title: "FITNESS", img: fitnessImg },
-  { title: "MMA", img: mmaImg },
-  { title: "YOGA", img: yogaImg },
-  { title: "RECOVERY", img: recoveryImg },
-  { title: "BOXING", img: boxingImg },
+  { title: "MUAY THAI", img: muayThaiImg, path: "/muay-thai" },
+  { title: "FITNESS", img: fitnessImg, path: "/fitness" },
+  { title: "MMA", img: mmaImg, path: "/mma" },
+  { title: "YOGA", img: yogaImg, path: "/yoga" },
+  { title: "RECOVERY", img: recoveryImg, path: "/recovery" },
+  { title: "BOXING", img: boxingImg, path: "/boxing" },
 ];
 
 const useReveal = () => {
@@ -81,6 +82,7 @@ export const Classes = ({ showHeader = true }: { showHeader?: boolean }) => {
             <div key={idx} className="class-card">
               <img src={course.img} alt={course.title} className="class-img" />
               <h3 className="class-name">{course.title}</h3>
+              <Link to={course.path} className="class-learn-more">LEARN MORE</Link>
             </div>
           ))}
         </div>

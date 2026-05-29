@@ -1321,3 +1321,291 @@ input:checked + .slider:before {
 .btn-get-to-know:hover {
   background-color: #333;
 }
+
+/* Class Learn More Link */
+.class-learn-more {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 1.5px solid #FFFFFF;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.class-card:hover .class-learn-more {
+  opacity: 1;
+  bottom: 15%;
+}
+.class-learn-more:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* Muay Thai Page */
+.mt-hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #000;
+}
+.mt-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.mt-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(100%) contrast(1.1);
+  opacity: 0.6;
+}
+.mt-hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  background: linear-gradient(to bottom, #FF6B35, #D4527A, #6B2FA0);
+  opacity: 0.75;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 100%);
+  mask-image: linear-gradient(to right, transparent, black 100%);
+  z-index: 2;
+}
+.mt-hero-content {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.mt-hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: clamp(80px, 12vw, 150px);
+  line-height: 0.85;
+  letter-spacing: 0;
+  text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+}
+
+.mt-intro-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #EEECE8;
+  padding: 80px 40px;
+  width: 100%;
+}
+@media(min-width: 992px) {
+  .mt-intro-section {
+    flex-direction: row;
+    align-items: center;
+    padding: 120px 80px;
+  }
+}
+.mt-intro-left {
+  flex: 1;
+  padding-right: 40px;
+  margin-bottom: 60px;
+}
+@media(min-width: 992px) {
+  .mt-intro-left {
+    margin-bottom: 0;
+  }
+}
+.mt-section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(50px, 7vw, 90px);
+  font-weight: 900;
+  color: #1A1A1A;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+.mt-gradient-bar {
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(to right, #F5D020, #FF6B35, #D4527A, #6B2FA0, #1A237E);
+  margin-top: 5px;
+}
+.mt-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+.btn-mt-discover {
+  background-color: #000;
+  color: #fff;
+  padding: 15px 30px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.btn-mt-discover:hover {
+  background-color: #333;
+}
+
+.mt-intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+.mt-clone-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.mt-clone {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+}
+.mt-clone-1 {
+  left: 20%;
+  opacity: 0.3;
+  z-index: 1;
+}
+.mt-clone-2 {
+  left: 35%;
+  opacity: 0.6;
+  z-index: 2;
+}
+.mt-clone-3 {
+  left: 50%;
+  opacity: 1.0;
+  z-index: 3;
+}
+
+.mt-alternating-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #EEECE8;
+  padding: 40px 40px;
+  width: 100%;
+}
+@media(min-width: 992px) {
+  .mt-alternating-section {
+    flex-direction: row;
+    align-items: center;
+    padding: 80px 80px;
+  }
+  .mt-alternating-section.reverse {
+    flex-direction: row;
+  }
+}
+.mt-alt-image {
+  flex: 1;
+  margin-bottom: 40px;
+}
+@media(min-width: 992px) {
+  .mt-alt-image {
+    margin-bottom: 0;
+  }
+  .mt-alternating-section .mt-alt-image {
+    padding-right: 40px;
+  }
+  .mt-alternating-section.reverse .mt-alt-image {
+    padding-right: 0;
+    padding-left: 40px;
+  }
+}
+.mt-alt-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(100%);
+}
+.mt-alt-content {
+  flex: 1;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  width: 55px;
+  height: 55px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  background-color: #000;
+  color: #fff;
+}
+
+/* Brutalist Typography Transition */
+.brutal-transition-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.brutal-transition-wrapper h1 {
+  transform: scaleX(var(--h1-scale-x, 1));
+  transform-origin: center center;
+  will-change: transform;
+  display: inline-block; /* Required for scaleX on text elements */
+}
+
+/* ===== BAR STAGGER WIPE TRANSITION ===== */
+.bar-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+.transition-bar {
+  flex: 1;
+  height: 100%;
+  background-color: #000;
+  transform: scaleY(0);
+  transform-origin: top;
+  will-change: transform;
+}

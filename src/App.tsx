@@ -10,6 +10,13 @@ import { ContactHero, ContactForm } from './components/ContactUs';
 import { LoginHero, LoginForm } from './components/Login';
 import { AboutHero, OurCommunity, TheGymSection } from './components/AboutUs';
 import ScrollToTop from './components/ScrollToTop';
+import { MuayThaiHero, MuayThaiIntro, MuayThaiBasics, MuayThaiIntermediate, MuayThaiAdvanced } from './components/MuayThai';
+import { FitnessHero, FitnessIntro, FitnessBasics, FitnessIntermediate, FitnessAdvanced } from './components/Fitness';
+import { MmaHero, MmaIntro, MmaBasics, MmaIntermediate, MmaAdvanced } from './components/MMA';
+import { BoxingHero, BoxingIntro, BoxingBasics, BoxingAdvanced, BoxingKids } from './components/Boxing';
+import { RecoveryHero, RecoveryIntro, RecoveryMassages, RecoveryPhysicalTherapy, RecoveryTraining } from './components/Recovery';
+import { YogaHero, YogaIntro, YogaBasics, YogaFlow, PowerYoga } from './components/Yoga';
+import { WhatsAppButton } from './components/WhatsAppButton';
 
 function App() {
   return (
@@ -68,9 +75,64 @@ function App() {
               <LoginForm />
             </>
           } />
+          <Route path="/muay-thai" element={
+            <>
+              <MuayThaiHero />
+              <MuayThaiIntro />
+              <MuayThaiBasics />
+              <MuayThaiIntermediate />
+              <MuayThaiAdvanced />
+            </>
+          } />
+          <Route path="/fitness" element={
+            <>
+              <FitnessHero />
+              <FitnessIntro />
+              <FitnessBasics />
+              <FitnessIntermediate />
+              <FitnessAdvanced />
+            </>
+          } />
+          <Route path="/mma" element={
+            <>
+              <MmaHero />
+              <MmaIntro />
+              <MmaBasics />
+              <MmaIntermediate />
+              <MmaAdvanced />
+            </>
+          } />
+          <Route path="/boxing" element={
+            <>
+              <BoxingHero />
+              <BoxingIntro />
+              <BoxingBasics />
+              <BoxingAdvanced />
+              <BoxingKids />
+            </>
+          } />
+          <Route path="/recovery" element={
+            <>
+              <RecoveryHero />
+              <RecoveryIntro />
+              <RecoveryMassages />
+              <RecoveryPhysicalTherapy />
+              <RecoveryTraining />
+            </>
+          } />
+          <Route path="/yoga" element={
+            <>
+              <YogaHero />
+              <YogaIntro />
+              <YogaBasics />
+              <YogaFlow />
+              <PowerYoga />
+            </>
+          } />
         </Routes>
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

@@ -9,10 +9,12 @@ import { FacilitiesHero, FacilitiesGallery } from './components/Facilities';
 import { ContactHero, ContactForm } from './components/ContactUs';
 import { LoginHero, LoginForm } from './components/Login';
 import { AboutHero, OurCommunity, TheGymSection } from './components/AboutUs';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main>
         <Routes>

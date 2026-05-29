@@ -1351,13 +1351,17 @@ input:checked + .slider:before {
   color: #000000;
 }
 
-/* Muay Thai Page */
 .mt-hero-section {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background-color: #000;
+}
+@media(max-width: 768px) {
+  .mt-hero-section {
+    height: 60vh;
+  }
 }
 .mt-hero-bg {
   position: absolute;
@@ -1407,7 +1411,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   background-color: #EEECE8;
-  padding: 80px 40px;
+  padding: 60px 20px;
   width: 100%;
 }
 @media(min-width: 992px) {
@@ -1419,11 +1423,12 @@ input:checked + .slider:before {
 }
 .mt-intro-left {
   flex: 1;
-  padding-right: 40px;
-  margin-bottom: 60px;
+  padding-right: 0;
+  margin-bottom: 40px;
 }
 @media(min-width: 992px) {
   .mt-intro-left {
+    padding-right: 40px;
     margin-bottom: 0;
   }
 }
@@ -1474,7 +1479,12 @@ input:checked + .slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
+  height: 300px;
+}
+@media(min-width: 768px) {
+  .mt-intro-right {
+    height: 500px;
+  }
 }
 .mt-clone-container {
   position: relative;
@@ -1508,7 +1518,7 @@ input:checked + .slider:before {
   display: flex;
   flex-direction: column;
   background-color: #EEECE8;
-  padding: 40px 40px;
+  padding: 40px 20px;
   width: 100%;
 }
 @media(min-width: 992px) {
@@ -1523,7 +1533,7 @@ input:checked + .slider:before {
 }
 .mt-alt-image {
   flex: 1;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 @media(min-width: 992px) {
   .mt-alt-image {
@@ -1539,10 +1549,15 @@ input:checked + .slider:before {
 }
 .mt-alt-image img {
   width: 100%;
-  height: 500px;
-  object-fit: contain;
+  height: 280px;
+  object-fit: cover;
   object-position: center;
   filter: grayscale(100%);
+}
+@media(min-width: 768px) {
+  .mt-alt-image img {
+    height: 500px;
+  }
 }
 .mt-alt-content {
   flex: 1;
@@ -1574,38 +1589,3 @@ input:checked + .slider:before {
   color: #fff;
 }
 
-/* Brutalist Typography Transition */
-.brutal-transition-wrapper {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.brutal-transition-wrapper h1 {
-  transform: scaleX(var(--h1-scale-x, 1));
-  transform-origin: center center;
-  will-change: transform;
-  display: inline-block; /* Required for scaleX on text elements */
-}
-
-/* ===== BAR STAGGER WIPE TRANSITION ===== */
-.bar-transition-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
-  z-index: 99999;
-  pointer-events: none;
-}
-
-.transition-bar {
-  flex: 1;
-  height: 100%;
-  background-color: #000;
-  transform: scaleY(0);
-  transform-origin: top;
-  will-change: transform;
-}

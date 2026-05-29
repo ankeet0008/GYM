@@ -49,7 +49,7 @@ export const RecoveryIntro = () => {
         <img 
           src={cloneImg} 
           alt="Recovery" 
-          style={{ width: '100%', height: '500px', objectFit: 'contain', filter: 'grayscale(100%)', objectPosition: 'center' }} 
+          style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(100%)', objectPosition: 'center' }} 
         />
       </div>
     </section>
